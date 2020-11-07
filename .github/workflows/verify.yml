@@ -1,13 +1,14 @@
-name: CI
+name: PR Verifier
 
 on:
-  pull_request_target:
-    types: [opened, edited, reopened]
+  pull_request_target: [opened, edited, reopened]
+
 
 jobs:
+
   verify:
+    name: Verify PR contents
     runs-on: ubuntu-latest
-    name: verify PR contents
     steps:
     - name: Verifier action
       id: verifier

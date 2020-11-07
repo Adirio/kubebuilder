@@ -5,7 +5,15 @@ on:
   push:
   pull_request:
 
+
 jobs:
+
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print env and event
+        uses: hmarr/debug-action@v1.0.0
 
   lint:
     name: Lint
@@ -13,8 +21,6 @@ jobs:
     # Pull requests from the same repository won't trigger this checks as they were already triggered by the push
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     steps:
-      - name: Debug Action
-        uses: hmarr/debug-action@v1.0.0
       - name: Clone the code
         uses: actions/checkout@v2
       - name: Execute golangci-lint
