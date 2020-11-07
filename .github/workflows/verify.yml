@@ -1,7 +1,8 @@
 name: PR Verifier
 
 on:
-  pull_request_target: [opened, edited, reopened]
+  pull_request_target:
+    types: [opened, edited, reopened]
 
 
 jobs:
