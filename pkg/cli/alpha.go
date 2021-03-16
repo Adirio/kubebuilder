@@ -26,6 +26,7 @@ import (
 
 const (
 	alphaCommand = "alpha"
+	unused = "-"
 )
 
 var alphaCommands = []*cobra.Command{
